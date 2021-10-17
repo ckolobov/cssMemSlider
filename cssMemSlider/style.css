@@ -3,11 +3,18 @@
   padding: 0;
 }
 
+body {
+  background-color: #F1F2F2;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
 .slider {
   display: flex;
-  flex-direction: column;
-  background: gray;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20px;
   width: 100%;
+  min-height: 100vh;
 }
 
 .slider__bottom {
@@ -15,21 +22,38 @@
 }
 
 .slider__container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   margin: 0 auto;
-  width: calc(100vw - 40px);
+  box-sizing: border-box;
+  padding: 40px;
+  width: 100%;
   max-width: 1000px;
+  border-radius: 20px;
+  background: #414042;
+  overflow: hidden;
+}
+
+.slider__slides-container {
+  width: 100%;
   overflow: hidden;
 }
 
 .slider__slides {
   display: flex;
+  align-items: stretch;
+  width: 100%;
   transition: all 0.5s ease;
 }
 
 .slider__slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-shrink: 0;
-  width: calc(100vw - 40px);
-  max-width: 1000px;
+  width: 100%;
+  background: white;
 }
 
 .slide__content {
@@ -38,8 +62,6 @@
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  background: white;
-  border: 2px solid blue;
 }
 
 .slide__content img {
@@ -50,6 +72,7 @@
 
 .slider__text-container {
   flex-grow: 1;
+  overflow: hidden;
 }
 
 .slider__text {
@@ -60,7 +83,11 @@
 
 .slide-text {
   flex-shrink: 0;
+  box-sizing: border-box;
+  padding: 10px;
+  min-height: 40px;
   width: 100%;
+  color: white;
 }
 
 .slider__navigation {
@@ -74,7 +101,6 @@
   width: 40px;
   height: 40px;
   cursor: pointer;
-  background: red;
 }
 
 .slider__dot {
@@ -87,8 +113,8 @@
 }
 
 .slider__link:hover .slider__dot{
-  border-color: blue;
-  background: blue;
+  border-color: #5199FF;
+  background: #5199FF;
 }
 
 .slider__input {
@@ -100,7 +126,7 @@
 #slide-3:checked ~ .slider__bottom .slider__navigation .slider__link[for="slide-3"] .slider__dot,
 #slide-4:checked ~ .slider__bottom .slider__navigation .slider__link[for="slide-4"] .slider__dot,
 #slide-5:checked ~ .slider__bottom .slider__navigation .slider__link[for="slide-5"] .slider__dot {
-  background-color: green;
+  background-color: transparent;
 }
 
 #slide-1:checked ~ .slider__top .slider__slides,
