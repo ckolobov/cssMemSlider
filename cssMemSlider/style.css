@@ -4,8 +4,14 @@
 }
 
 .slider {
+  display: flex;
+  flex-direction: column;
   background: gray;
   width: 100%;
+}
+
+.slider__bottom {
+  display: flex;
 }
 
 .slider__container {
@@ -42,6 +48,21 @@
   max-height: 50vh;
 }
 
+.slider__text-container {
+  flex-grow: 1;
+}
+
+.slider__text {
+  display: flex;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+.slide-text {
+  flex-shrink: 0;
+  width: 100%;
+}
+
 .slider__navigation {
   display: flex;
 }
@@ -74,30 +95,35 @@
   display: none;
 }
 
-#slide-1:checked ~ .slider__navigation .slider__link[for="slide-1"] .slider__dot,
-#slide-2:checked ~ .slider__navigation .slider__link[for="slide-2"] .slider__dot,
-#slide-3:checked ~ .slider__navigation .slider__link[for="slide-3"] .slider__dot,
-#slide-4:checked ~ .slider__navigation .slider__link[for="slide-4"] .slider__dot,
-#slide-5:checked ~ .slider__navigation .slider__link[for="slide-5"] .slider__dot {
+#slide-1:checked ~ .slider__bottom .slider__navigation .slider__link[for="slide-1"] .slider__dot,
+#slide-2:checked ~ .slider__bottom .slider__navigation .slider__link[for="slide-2"] .slider__dot,
+#slide-3:checked ~ .slider__bottom .slider__navigation .slider__link[for="slide-3"] .slider__dot,
+#slide-4:checked ~ .slider__bottom .slider__navigation .slider__link[for="slide-4"] .slider__dot,
+#slide-5:checked ~ .slider__bottom .slider__navigation .slider__link[for="slide-5"] .slider__dot {
   background-color: green;
 }
 
-#slide-1:checked ~ .slider__slides {
+#slide-1:checked ~ .slider__top .slider__slides,
+#slide-1:checked ~ .slider__bottom .slider__text {
   margin-left: 0;
 }
 
-#slide-2:checked ~ .slider__slides {
+#slide-2:checked ~ .slider__top .slider__slides,
+#slide-2:checked ~ .slider__bottom .slider__text {
   margin-left: -100%;
 }
 
-#slide-3:checked ~ .slider__slides {
+#slide-3:checked ~ .slider__top .slider__slides,
+#slide-3:checked ~ .slider__bottom .slider__text {
   margin-left: -200%;
 }
 
-#slide-4:checked ~ .slider__slides {
+#slide-4:checked ~ .slider__top .slider__slides,
+#slide-4:checked ~ .slider__bottom .slider__text {
   margin-left: -300%;
 }
 
-#slide-5:checked ~ .slider__slides {
+#slide-5:checked ~ .slider__top .slider__slides,
+#slide-5:checked ~ .slider__bottom .slider__text {
   margin-left: -400%;
 }
