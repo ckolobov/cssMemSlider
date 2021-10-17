@@ -53,7 +53,6 @@ body {
   align-items: center;
   flex-shrink: 0;
   width: 100%;
-  background: white;
 }
 
 .slide__content {
@@ -84,14 +83,16 @@ body {
 .slide-text {
   flex-shrink: 0;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 5px 10px;
   min-height: 40px;
   width: 100%;
   color: white;
+  font-size: 1.5em;
 }
 
 .slider__navigation {
   display: flex;
+  justify-content: center;
 }
 
 .slider__link {
@@ -152,4 +153,11 @@ body {
 #slide-5:checked ~ .slider__top .slider__slides,
 #slide-5:checked ~ .slider__bottom .slider__text {
   margin-left: -400%;
+}
+
+@media (max-width: 600px) {
+  .slider__bottom {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
 }
